@@ -46,7 +46,7 @@ $this->db->insert('mytable', $data);
             </td>     
         </tr>
 
-        <tr>
+        <tr>    
             <td>
                <input type="submit" name="insert" value="Insert" />
             </td>
