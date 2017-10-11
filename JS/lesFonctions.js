@@ -1,5 +1,5 @@
 
-function afficherLesMedicaments(codeDepot){
+function afficherLesMedicament(codeDepot){
     $.ajax(
         {  
             type:"get",
@@ -18,13 +18,13 @@ function afficherLesMedicaments(codeDepot){
         );
 }
 
-function afficherLesIndividus(codeIndividus)
+function afficherLesIndividu(codeIndividus)
 {
    
     $.ajax(
         {  
             type:"get",
-            url:"index.php/Ctrl_Sncf/afficherLesIndividus",
+            url:"index.php/Ctrl_A/afficherLesIndividus",
             data:"codeIndividus="+codeIndividus,
              success:function(data)
             {

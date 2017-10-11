@@ -16,16 +16,29 @@
                         
                        afficherLesMedicaments($(this).val());
                     });
+                    
+                    $("#divIndividus").change(function(){ 
+                        
+                       afficherLesIndividus();
+                    });
                 }
              );
+      
+                    
          
         </script>
         
     </head>
     <body>
-        <table cellspacing="2px" cellpadding="2px;" rules="all" style="border:solid 1px black;">
+        <button><a href="index.php/Ctrl_A/afficherIndividus">bouton</a></button>
+        <br>
+        <br>
+    </select>
+        
+        
+        <table cellspacing="2px" cellpadding="2px" rules="all">
             <tr>
-            <th>Depot legal</th>
+            <th>Depot legal </th>
             <th>Nom Commercial</th>
             <th>Libelle Famille</th>
             <th>Composition</th>
@@ -37,22 +50,23 @@
 <!--      
 <select id="lstmedicament" size="20">-->
 <?php 
-foreach ($medicament as $med){
+//echo "input type='button' href='index.php/Ctrl_A/afficherIndividus'";
+foreach ($medicament as $med)
+    {
+
 echo "<tr>";
-echo"<td>".$med->MED_DEPOTLEGAL."</td>";
-echo"<td>".$med->MED_NOMCOMMERCIAL."</td>";
-echo"<td>".$med->FAM_CODE."</td>";
-echo"<td>".$med->MED_COMPOSITION."</td>";
-echo"<td>".$med->MED_EFFETS."</td>";
-echo"<td>".$med->MED_CONTREINDIC."</td>";
-echo"<td>".$med->MED_PRIXECHANTILLON."</td>";
-        echo"</tr>";
+echo "<td>".$med->MED_DEPOTLEGAL."</td>";
+echo "<td>".$med->MED_NOMCOMMERCIAL."</td>";
+echo "<td>".$med->FAM_CODE."</td>";
+echo "<td>".$med->MED_COMPOSITION."</td>";
+echo "<td>".$med->MED_EFFETS."</td>";
+echo "<td>".$med->MED_CONTREINDIC."</td>";
+echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
+        echo "</tr>";
+        
 }
 ?>        
-            
-        </table>
-        
-        <div id="divIndividus"></div>
+ </table> 
+    <div id="divIndividus"></div>
     </body>
 </html>
-            
