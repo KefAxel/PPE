@@ -67,6 +67,109 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
 }
 ?>        
  </table> 
+    --
+    <form method="post">
+    
+<!--    $data = array(
+        'title' => 'My title',
+        'name' => 'My Name',
+        'date' => 'My date'
+);
+
+$this->db->insert('mytable', $data);
+// Produces: INSERT INTO mytable (title, name, date) VALUES ('My title', 'My name', 'My date')-->
+
+    
+<tr>
+            <td>
+                <div class="form-group">
+                    <label for="DepotLegal">Libellé</label>
+                    <input type="textbox" id="depotlegal" name="depotlegal">
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    <label for="NomCommercial">NomCommercial</label>
+                    <input type="textbox" id="nomcommercial" name="nomcommercial">
+                </div>
+            </td>  
+            <td>
+                <div class="form-group">
+                    <label for="Code">Code</label>
+                    <input type="textbox" id="code" name="code">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="Code">Code</label>
+                    <input type="textbox" id="code" name="code">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="Composition">Composition</label>
+                    <input type="textbox" id="composition" name="composition">
+                </div>
+            </td>
+             <td>
+                <div class="form-group">
+                    <label for="Effets">Effets</label>
+                    <input type="textbox" id="effets" name="effets">
+                </div>
+            </td>
+             <td>
+                <div class="form-group">
+                    <label for="Contreindic">Contreindic</label>
+                    <input type="textbox" id="contreindic" name="contreindic">
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <label for="PrixEchantillon">PrixEchantillon</label>
+                    <input type="textbox" id="prixechantillon" name="prixechantillon">
+                </div>
+            </td>
+        </tr>
+
+        <tr>    
+            <td>
+               <input type="submit" name="insert" value="Insert" />
+            </td>
+        </tr>
+        <?php
+
+if($this->input->post('insert') != ''){
+/*Perform insert operation here*/
+
+    $code = $this->input->post('code');
+    $depotlegal = $this->input->post('depotlegal');
+    $nomcommercial = $this->input->post('nomcommercial');
+    $composition = $this->input->post('composition');
+    $effets = $this->input->post('effets');
+    $contreindic = $this->input->post('contreindic');
+    $prixechantillon = $this->input->post('prixechantillon');
+    
+
+
+    $data = array(
+        'FAM_CODE' => $code,
+        'MED_DEPOTLEGAL' => $depotlegal,
+        'MED_NOMCOMMERCIAL' => $nomcommercial,
+        'MED_COMPOSITION' => $composition,
+        'MED_EFFETS' => $effets,
+        'MED_CONTREINDIC' => $contreindic,
+        'MED_PRIXECHANTILLON' => $prixechantillon,
+    );
+
+
+    $this->db->insert('medicament',$data);
+     header("refresh: 0;");
+}
+?>
+</form>
+    
+    --
     <div id="divIndividus"></div>
     </body>
 </html>
