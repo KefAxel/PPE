@@ -12,14 +12,14 @@
                function()
                 {
                     
-                    $("#lstmedicament").change(function(){ 
-                        
-                       afficherLesMedicaments($(this).val());
+                    $('#lstMedicament').change(function(){
+                      
+                    $('#depotlegal').val($('#lstMedicament').val());
                     });
                     
-                    $("#divIndividus").change(function(){ 
-                        
-                       afficherLesIndividus();
+                    $('#lstMedicament').change(function(){
+                      
+                    $('#code').val(opt1);
                     });
                 }
              );
@@ -33,8 +33,6 @@
         <button><a href="index.php/Ctrl_A/afficherIndividus">bouton</a></button>
         <br>
         <br>
-    </select>
-        
         
         <table cellspacing="2px" cellpadding="2px" rules="all">
             <tr>
@@ -67,6 +65,27 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
 }
 ?>        
  </table> 
+        <?php
+
+        echo "<select id='lstMedicament'>";
+
+
+                    foreach ($medicament as $medi)
+                    {
+
+
+                        echo "<option id='opt1' value='".$medi->MED_DEPOTLEGAL."'>".$medi->MED_NOMCOMMERCIAL."</option>";
+           
+                        echo "<option id='opt2' value='".$medi->MED_NOMCOMMERCIAL."'>".$medi->MED_NOMCOMMERCIAL."</option>";
+
+ 
+
+                    }
+
+
+       echo "</select>";
+   ?>
+        
     --
     <form method="post">
     
@@ -100,12 +119,7 @@ $this->db->insert('mytable', $data);
                     <input type="textbox" id="code" name="code">
                 </div>
             </td>
-            <td>
-                <div class="form-group">
-                    <label for="Code">Code</label>
-                    <input type="textbox" id="code" name="code">
-                </div>
-            </td>
+           
             <td>
                 <div class="form-group">
                     <label for="Composition">Composition</label>
@@ -137,8 +151,44 @@ $this->db->insert('mytable', $data);
                <input type="submit" name="insert" value="Insert" />
             </td>
         </tr>
+        <tr>    
+            <td>
+               <input type="submit" name="update" value="Update" />
+            </td>
+        </tr>
         <?php
+if($this->input->post('update') != ''){
 
+       $code = $this->input->post('code');
+    $depotlegal = $this->input->post('depotlegal');
+    $nomcommercial = $this->input->post('nomcommercial');
+    $composition = $this->input->post('composition');
+    $effets = $this->input->post('effets');
+    $contreindic = $this->input->post('contreindic');
+    $prixechantillon = $this->input->post('prixechantillon');
+    
+
+    $data = array(
+        'FAM_CODE' => $code,
+        'MED_DEPOTLEGAL' => $depotlegal,
+        'MED_NOMCOMMERCIAL' => $nomcommercial,
+        'MED_COMPOSITION' => $composition,
+        'MED_EFFETS' => $effets,
+        'MED_CONTREINDIC' => $contreindic,
+        'MED_PRIXECHANTILLON' => $prixechantillon,
+    );
+    $this->db->set('MED_DEPOTLEGAL', $depotlegal);
+$this->db->set('MED_NOMCOMMERCIAL', $nomcommercial);
+$this->db->set('MED_COMPOSITION', $composition);
+$this->db->set('MED_EFFETS', $effets);
+$this->db->set('MED_CONTREINDIC', $contreindic);
+$this->db->set('MED_PRIXECHANTILLON', $prixechantillon);
+    $this->db->where('MED_DEPOTLEGAL', $depotlegal);
+$this->db->update('medicament',$data);
+           
+     header("refresh: 0;");
+
+}
 if($this->input->post('insert') != ''){
 /*Perform insert operation here*/
 
@@ -167,9 +217,11 @@ if($this->input->post('insert') != ''){
      header("refresh: 0;");
 }
 ?>
+        
 </form>
     
     --
     <div id="divIndividus"></div>
     </body>
+    
 </html>
