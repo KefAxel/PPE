@@ -18,8 +18,8 @@
                     });
                     
                     $('#lstMedicament').change(function(){
-                      
-                    $('#code').val(opt1);
+                    $('#nomcommercial').val($('#lstMedicament').val())
+
                     });
                 }
              );
