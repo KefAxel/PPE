@@ -33,7 +33,7 @@
         
     </head>
     <body>
-        <button><a href="index.php/Ctrl_A/afficherIndividus">Liste Individus </a></button>
+        <button><a href="afficherIndividus">Liste Individus </a></button>
         <br>
         <br>
         <div id="Tableau" align="left">
