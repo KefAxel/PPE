@@ -15,10 +15,13 @@
                     $('#lstMedicament').change(function(){
                       
                     $('#depotlegal').val($('#lstMedicament').val());
-                    });
-                    
-                    $('#lstMedicament').change(function(){
-                    $('#nomcommercial').val($('#lstMedicament').val())
+                    $('#nomcommercial').val($('#lstMedicament option:selected').attr('name'));
+                     $('#code').val($('#lstMedicament option:selected').attr('name2'));
+                     $('#composition').val($('#lstMedicament option:selected').attr('name3'));
+                     $('#effets').val($('#lstMedicament option:selected').attr('name4'));
+                     $('#contreindic').val($('#lstMedicament option:selected').attr('name5'));
+                     $('#prixechantillon').val($('#lstMedicament option:selected').attr('name6'));
+
 
                     });
                 }
@@ -30,11 +33,11 @@
         
     </head>
     <body>
-        <button><a href="index.php/Ctrl_A/afficherIndividus">bouton</a></button>
+        <button><a href="index.php/Ctrl_A/afficherIndividus">Liste Individus </a></button>
         <br>
         <br>
-        
-        <table cellspacing="2px" cellpadding="2px" rules="all">
+        <div id="Tableau" align="left">
+        <table cellspacing="1px" cellpadding="1px" rules="all">
             <tr>
             <th>Depot legal </th>
             <th>Nom Commercial</th>
@@ -64,52 +67,47 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
         
 }
 ?>        
+    
  </table> 
-        <?php
-
-        echo "<select id='lstMedicament'>";
-
-
+        </div>
+        
+         <select id="lstMedicament">
+                
+                    <?php
                     foreach ($medicament as $medi)
                     {
+                    ?>
+                
 
+     <option name="<?php echo $medi->MED_NOMCOMMERCIAL;?>" 
+             value="<?php echo $medi->MED_DEPOTLEGAL; ?>"
+             name2="<?php echo $medi->FAM_CODE; ?>"
+             name3="<?php echo $medi->MED_COMPOSITION; ?>"
+             name4="<?php echo $medi->MED_EFFETS; ?>"
+             name5="<?php echo $medi->MED_CONTREINDIC; ?>"
+             name6="<?php echo $medi->MED_PRIXECHANTILLON; ?>"
 
-                        echo "<option id='opt1' value='".$medi->MED_DEPOTLEGAL."'>".$medi->MED_NOMCOMMERCIAL."</option>";
-           
-                        echo "<option id='opt2' value='".$medi->MED_NOMCOMMERCIAL."'>".$medi->MED_NOMCOMMERCIAL."</option>";
-
- 
-
+             ><?php echo $medi->MED_NOMCOMMERCIAL; ?></option>
+                    <?php
                     }
-
-
-       echo "</select>";
-   ?>
+                    ?>
+            </select>
+        
         
     --
     <form method="post">
     
-<!--    $data = array(
-        'title' => 'My title',
-        'name' => 'My Name',
-        'date' => 'My date'
-);
-
-$this->db->insert('mytable', $data);
-// Produces: INSERT INTO mytable (title, name, date) VALUES ('My title', 'My name', 'My date')-->
-
-    
 <tr>
             <td>
                 <div class="form-group">
-                    <label for="DepotLegal">Libellé</label>
+                    <label for="DepotLegal">Depot legal	</label>
                     <input type="textbox" id="depotlegal" name="depotlegal">
                 </div>
             </td>
 
             <td>
                 <div class="form-group">
-                    <label for="NomCommercial">NomCommercial</label>
+                    <label for="NomCommercial">Nom Commercial</label>
                     <input type="textbox" id="nomcommercial" name="nomcommercial">
                 </div>
             </td>  
@@ -123,7 +121,7 @@ $this->db->insert('mytable', $data);
             <td>
                 <div class="form-group">
                     <label for="Composition">Composition</label>
-                    <input type="textbox" id="composition" name="composition">
+                    <input type="textbox" size="50" id="composition" name="composition">
                 </div>
             </td>
              <td>

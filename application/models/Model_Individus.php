@@ -10,7 +10,7 @@ class Model_Individus extends CI_Controller{
     }
      function ajouter_individu($data){
         $query = $this->db->insert('type_individu', $data);
-
+    
 
     }
     

@@ -1,22 +1,24 @@
 <html>
     <head>
-        <title>Medicament</title>
+        <title>Individu</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script type="text/javascript" src="JQuery/jquery-3.1.1.js"></script>
          <script type="text/javascript" src="JS/lesFonctions.js"></script>
          <script type="text/javascript">
          
-             $
+              $
            (
                function()
                 {
                     
                     $('#lstIndividu').change(function(){
                       
-                    $('#libelle').val($('#lstIndividu').val());
+                    $('#code').val($('#lstIndividu').val());
+                    $('#libelle').val($('#lstIndividu option:selected').attr('name'));
+
+
                     });
-                    
                 }
              );
       
@@ -24,24 +26,43 @@
          
         </script>
     </head>
-<?php
+    <table cellspacing="2px" cellpadding="2px" rules="all">
+            <tr>
+            <th>Code </th>
+            <th>Libelle</th>
+            </tr>  
+            
+<!--      
+<select id="lstmedicament" size="20">-->
+<?php 
+//echo "input type='button' href='index.php/Ctrl_A/afficherIndividus'";
+foreach ($lesindividus as $individus)
+    {
 
-        echo "<select id='lstIndividu'>";
-
-
+echo "<tr>";
+echo "<td>".$individus->TIN_CODE."</td>";
+echo "<td>".$individus->TIN_LIBELLE."</td>";
+        echo "</tr>";
+        
+}
+?>        
+ </table> 
+     <select id="lstIndividu">
+                
+                    <?php
                     foreach ($lesindividus as $individus)
                     {
+                    ?>
+                
 
+     <option name="<?php echo $individus->TIN_LIBELLE;?>" 
+             value="<?php echo $individus->TIN_CODE; ?>"
 
-                        echo "<option id='opt1' value='".$individus->TIN_CODE."'>".$individus->TIN_LIBELLE."</option>";
-
-
-
+             ><?php echo $individus->TIN_LIBELLE; ?></option>
+                    <?php
                     }
-
-
-       echo "</select>";
-   ?>
+                    ?>
+            </select>
 
 <form method="post">
     

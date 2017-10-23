@@ -14,7 +14,7 @@ class Ctrl_A extends CI_Controller{
 
     public function afficherIndividus() 
             {
-       $codeIndividus = $_GET['codeIndividus'];
+//       $codeIndividus = $_GET['codeIndividus'];
                         
        $this->load->model('Model_Individus');
        
