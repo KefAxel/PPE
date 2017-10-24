@@ -3,8 +3,8 @@
         <title>Medicament</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <script type="text/javascript" src="JQuery/jquery-3.1.1.js"></script>
-         <script type="text/javascript" src="JS/lesFonctions.js"></script>
+         <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
+         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
          <script type="text/javascript">
          
              $
@@ -33,6 +33,7 @@
         
     </head>
     <body>
+        <a href=http://localhost/SIO2/Medecin/>Retour au menu</a>
         <button><a href="afficherIndividus">Liste Individus </a></button>
         <br>
         <br>
@@ -66,11 +67,12 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
         echo "</tr>";
         
 }
+
 ?>        
     
  </table> 
         </div>
-        
+        <h1>Inserer un nouveau medicament ou bien selectionner un medicament a modifier</h1>
          <select id="lstMedicament">
                 
                     <?php
