@@ -54,7 +54,8 @@
         </script>
     </head>
     <body>
-        
+            <a href="http://localhost/SIO2/Medecin/">Menu</a>
+
         <h2>Liste composant</h2>
         <select multiple="" id="lstComposant">
             <?php 

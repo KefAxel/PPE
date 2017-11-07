@@ -1,5 +1,5 @@
 <?php
-class Model_Individus extends CI_Controller{
+class Model_Individus extends CI_Model{
     
     public function afficherLesIndividus(){
         

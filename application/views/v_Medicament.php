@@ -33,8 +33,9 @@
         
     </head>
     <body>
-        <a href=http://localhost/SIO2/Medecin/>Retour au menu</a>
+        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
         <button><a href="afficherIndividus">Liste Individus </a></button>
+        
         <br>
         <br>
         <div id="Tableau" align="left">
@@ -72,6 +73,7 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
     
  </table> 
         </div>
+       
         <h1>Inserer un nouveau medicament ou bien selectionner un medicament a modifier</h1>
          <select id="lstMedicament">
                 
@@ -89,11 +91,15 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
              name5="<?php echo $medi->MED_CONTREINDIC; ?>"
              name6="<?php echo $medi->MED_PRIXECHANTILLON; ?>"
 
-             ><?php echo $medi->MED_NOMCOMMERCIAL; ?></option>
+             >
+                 <?php echo $medi->MED_NOMCOMMERCIAL; ?>
+     </option>
                     <?php
                     }
                     ?>
             </select>
+        
+       
         
         
     --
@@ -116,7 +122,15 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
             <td>
                 <div class="form-group">
                     <label for="Code">Code</label>
-                    <input type="textbox" id="code" name="code">
+                    <select  class="form-control" id="code" name="code">
+                          <?php 
+                foreach ($famille as $fam ){
+                ?> 
+                <option value="<?php echo $fam->FAM_CODE;?>"> <?php echo $fam->FAM_LIBELLE;?></option>
+                <?php
+                }
+                ?>
+                        </select>
                 </div>
             </td>
            

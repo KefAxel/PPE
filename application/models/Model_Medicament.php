@@ -1,5 +1,5 @@
 <?php
-class Model_Medicament extends CI_Controller{
+class Model_Medicament extends CI_Model{
     
     public function GetAllMedicament(){
         
@@ -8,15 +8,12 @@ class Model_Medicament extends CI_Controller{
         
         
     }
-    function ajouter_medicament($data){
-        $query = $this->db->insert('medicament', $data);
-    
-    
-}
-    public function getMedicamentById($codeMedicament)
-    {
-        $sql = $this->db->query("SELECT * FROM medicament where MED_DEPOTLEGAL = '".$codeMedicament."'");
-        return $sql->result();
+      public function GetAllFamille($data1){
+        
+      $sql = $this->db->query("select * from famille");
+      return $sql -> result();
+        
+        
     }
 
 }

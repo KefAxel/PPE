@@ -27,7 +27,7 @@
         </script>
     </head>
         <a href=afficherLesMedicament>afficher les Medicaments</a>
-        <a href=http://localhost/SIO2/Medecin/>Retour au menu</a>
+        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
 
     <table cellspacing="2px" cellpadding="2px" rules="all">
             <tr>

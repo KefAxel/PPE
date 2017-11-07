@@ -1,10 +1,12 @@
 <html>
     <head> 
-    <a href="index.php/Ctrl_A/afficherIndividus">afficher les Individus</a>
+            <a href="http://localhost/SIO2/Medecin/">Accueil</a>
+            <br>
+
+    <a href="afficherIndividus">afficher les Individus</a>
     <br>
-    <a href="index.php/Ctrl_A/afficherLesMedicament">afficher les Medicaments</a>
+    <a href="afficherLesMedicament">afficher les Medicaments</a>
     <br>
-    <a href="index.php/Ctrl_A/afficherComposant">afficher les   Composants</a>
 
 
 </head>

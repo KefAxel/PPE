@@ -17,30 +17,24 @@ function afficherLesMedicament(codeDepot){
         }
         );
 }
-function ModifierComposant()
- {   
-    alert($('#txtValeur').val());
-     alert($('#lstComposant').val());
-     $.ajax 
-     (
-         {
-             type:"get",
-             url:"index.php/Ctrl_Gestion_Composant/GetModifierMedicament",
-             data:"nomComposant="+$('#libelle').val()+"&code="+$('#lstComposant').val(),
+function afficherLesFamilles(codeFam){
+    $.ajax(
+        {  
+            type:"get",
+            url:"index.php/Ctrl_A/afficherLesFamilles",
+            data:"codeFam="+codeFam,
              success:function(data)
-             {
-                 $('#form-group').empty();
-                $('#form-group').append(data);
-                 
-             },
+            {
+                $('#divFamille').empty();
+                $('#divFamille').append(data);
+            },
             error:function()
-             {
-                 alert('Erreur pendant la modification !!!');
+            {
+                alert('erreur');
             }
-         }
- 
-    ); 
- }
+        }
+        );
+}
 function afficherLesIndividu(codeIndividus)
 {
    
