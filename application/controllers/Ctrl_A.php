@@ -21,8 +21,10 @@ class Ctrl_A extends CI_Controller{
 //       $codeIndividus = $_GET['codeIndividus'];
                         
         $this->load->model('Model_Medicament');
+        $this->load->model('Model_Famille');
            
         $data['medicament'] = $this->Model_Medicament->GetAllMedicament();
+        $data['famille'] = $this->Model_Famille->GetAllFamille();
         
         $this->load->view('v_Medicament',$data);
     }
