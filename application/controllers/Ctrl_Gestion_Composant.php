@@ -27,39 +27,33 @@ class Ctrl_Gestion_Composant extends CI_Controller {
                 $this->load->view('v_ComposantMedicament',$data); 
             }
     public function presentationMedicament()
-            {
-                $this->load->model('model_presentationMedicament');
-                $data['titre'] = "Presentation composant";
-                 $data['LaPresentation_Medicament'] = $this->model_presentationMedicament->GetPresentationtMedicament();
-                $this->load->view('v_PresentationMedicament',$data); 
-            }
-            public function ModifierComposant()
-            {
-               $nomCoposant = $_GET['nomCoposant'];
-               $code = $_GET['code'];
-               $data['lesComposants'] = $this->model_modifMedicament->GetModifierMedicament();
-               $this->load->view('v_Composant',$data);
-                
-                   
-            }
+    {
+        $this->load->model('model_presentationMedicament');
+        $data['titre'] = "Presentation composant";
+         $data['LaPresentation_Medicament'] = $this->model_presentationMedicament->GetPresentationtMedicament();
+        $this->load->view('v_PresentationMedicament',$data); 
+    }
+    public function ModifierComposant()
+    {
+       $nomCoposant = $_GET['nomCoposant'];
+       $code = $_GET['code'];
+       $data['lesComposants'] = $this->model_modifMedicament->GetModifierMedicament();
+       $this->load->view('v_Composant',$data);
 
 
-
-
-
-
-
-
-
-
-            public function afficherMedicament()
-            {
-                $this->load->model('model_medicament');
-                $data['titre'] = "Presentation composant";
-                 $data['lesMedicaments'] = $this->model_medicament->GetAfficherMedicament();
-                $this->load->view('v_Medicament',$data); 
-            }
+    }
+    public function afficherMedicament()
+    {
+        $this->load->model('model_medicament');
+        $data['titre'] = "Presentation composant";
+         $data['lesMedicaments'] = $this->model_medicament->GetAfficherMedicament();
+        $this->load->view('v_Medicament',$data); 
+    }
             
-            
+    public function AfficherComposantMedicaments()
+    {
+        // A toi de jouer ici
+        
+    }
     
 }

@@ -16,7 +16,7 @@
                     
                     // Ce ne sont pas des input mais une liste
                     //$("input[name='formation']").click(function(){
-                       AfficherComposantDuMedicament($(this).val());
+                       AfficherComposantDuMedicament();
                     });
                     
                     $('#divFormations').change
