@@ -1,4 +1,4 @@
-function AfficherComposantDuMedicament()
+function AfficherComposantDuMedicament(MED_DEPOTLEGAL)
  { 
      $.ajax 
      (

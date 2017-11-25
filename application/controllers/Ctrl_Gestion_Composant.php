@@ -46,13 +46,21 @@ class Ctrl_Gestion_Composant extends CI_Controller {
     {
         $this->load->model('model_medicament');
         $data['titre'] = "Presentation composant";
-         $data['lesMedicaments'] = $this->model_medicament->GetAfficherMedicament();
+            $data['lesMedicaments'] = $this->model_medicament->GetAfficherMedicament();
         $this->load->view('v_Medicament',$data); 
     }
             
     public function AfficherComposantMedicaments()
     {
         // A toi de jouer ici
+        $MED_DEPOTLEGAL = $_GET['MED_DEPOTLEGAL'];
+        $model =  $this->load->model('model_composantMedicament');
+        $data['lesComposantDuMedicament'] = $this->model_composantMedicament->GetComposantDuMedicament($MED_DEPOTLEGAL);
+          $data['lesComposantDuMedicament2'] = $this->model_composantMedicament->GetMedicament();
+           $this->load->model('model_composant');
+           $data['LesComposants'] = $this->model_composant->GetComposant();
+        $this->load->view('v_ComposantDuMedicament',$data);
+        
         
     }
     

@@ -19,7 +19,7 @@
                        AfficherComposantDuMedicament();
                     });
                     
-                    $('#divFormations').change
+                    $('#divComposant').change
                     (
                             function(){AfficherComposantDuMedicament($(this).val());
                     }
@@ -59,12 +59,10 @@
             ?>
             
         
-        </select><br><br>
+        </select><br>
+        
          <br><br>
         <div id="divComposant"></div>
-
-        
     </body>
-
 </html>
         
