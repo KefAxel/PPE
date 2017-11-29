@@ -55,4 +55,23 @@ function afficherLesIndividu(codeIndividus)
         }
         );
 }
-
+function afficherLesDosages(codeDosage)
+{
+   
+    $.ajax(
+        {  
+            type:"get",
+            url:"index.php/Ctrl_A/afficherLesDosages",
+            data:"codeDosage="+codeDosage,
+             success:function(data)
+            {
+                $('#divIndividus').empty();
+                $('#divIndividus').append(data);
+            },
+            error:function()
+            {
+                alert('erreur');
+            }
+        }
+        );
+}

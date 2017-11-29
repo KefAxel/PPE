@@ -1,0 +1,28 @@
+#1
+{
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+}
+#PartieGauche
+{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    float: left;
+}
+#PartieDroite
+{
+    width: 200px;
+    height: 500px;
+    position: relative;
+    float: right;
+}
+textarea { display:block;}
+
+#Titre
+{
+    width:  1000px;
+    height: 1000px;
+    float: 
+}

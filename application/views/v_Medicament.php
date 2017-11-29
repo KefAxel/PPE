@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
          <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          <script type="text/javascript">
          
              $
@@ -33,13 +36,13 @@
         
     </head>
     <body>
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
-        <button><a href="afficherIndividus">Liste Individus </a></button>
+        <h1 align="center">Medicament</h1>
+        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A//>Retour au menu</a>
         
         <br>
         <br>
-        <div id="Tableau" align="left">
-        <table cellspacing="1px" cellpadding="1px" rules="all">
+        <div class="col-sm-6">
+        <table class="table table-striped" cellspacing="2px" cellpadding="2px" rules="all"  >
             <tr>
             <th>Depot legal </th>
             <th>Nom Commercial</th>
@@ -72,10 +75,17 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
 ?>        
     
  </table> 
+        </div>  
+        <div class="col-sm-2">
+            
+            
         </div>
+       <div class="col-sm-5">
+        <h2>Inserer un nouveau medicament ou bien selectionner un medicament a modifier</h2>
+        
+       <label for="NomCommercial">Choix d'un Medicament a modifier</label>
        
-        <h1>Inserer un nouveau medicament ou bien selectionner un medicament a modifier</h1>
-         <select id="lstMedicament">
+        <select id="lstMedicament" >
                 
                     <?php
                     foreach ($medicament as $medi)
@@ -98,17 +108,22 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
                     }
                     ?>
             </select>
-        
+       </
+       <br>
+       <br>
+       
        
         
         
-    --
+       <h4>Inserer un nouveau medicament ou modifier un medicament</h4>
+       <br>
     <form method="post">
     
 <tr>
             <td>
                 <div class="form-group">
                     <label for="DepotLegal">Depot legal	</label>
+                    <br>
                     <input type="textbox" id="depotlegal" name="depotlegal">
                 </div>
             </td>
@@ -116,13 +131,15 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
             <td>
                 <div class="form-group">
                     <label for="NomCommercial">Nom Commercial</label>
+                    <br>
                     <input type="textbox" id="nomcommercial" name="nomcommercial">
                 </div>
             </td>  
             <td>
                 <div class="form-group">
                     <label for="Code">Code</label>
-                    <select  class="form-control" id="code" name="code">
+                    <br>
+                    <select   id="code" class="input-small" name="code">
                           <?php 
                 foreach ($famille as $fam ){
                 ?> 
@@ -137,24 +154,28 @@ echo "<td>".$med->MED_PRIXECHANTILLON."</td>";
             <td>
                 <div class="form-group">
                     <label for="Composition">Composition</label>
+                    <br>
                     <input type="textbox" size="50" id="composition" name="composition">
                 </div>
             </td>
              <td>
                 <div class="form-group">
                     <label for="Effets">Effets</label>
+                    <br>
                     <input type="textbox" id="effets" name="effets">
                 </div>
             </td>
              <td>
                 <div class="form-group">
                     <label for="Contreindic">Contreindic</label>
+                    <br>
                     <input type="textbox" id="contreindic" name="contreindic">
                 </div>
             </td>
             <td>
                 <div class="form-group">
                     <label for="PrixEchantillon">PrixEchantillon</label>
+                    <br>
                     <input type="textbox" id="prixechantillon" name="prixechantillon">
                 </div>
             </td>
@@ -230,10 +251,11 @@ if($this->input->post('insert') != ''){
     $this->db->insert('medicament',$data);
      header("refresh: 0;");
 }
+
 ?>
         
 </form>
-    
+       </div>
     --
     <div id="divIndividus"></div>
     </body>

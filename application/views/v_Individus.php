@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
          <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>  
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          <script type="text/javascript">
          
               $
@@ -26,10 +29,15 @@
          
         </script>
     </head>
-        <a href=afficherLesMedicament>afficher les Medicaments</a>
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
+    <h1 align="center">Individu </h1>
+    <div class="container-fluid">
+        
+<br>
+<br>
 
-    <table cellspacing="2px" cellpadding="2px" rules="all">
+ <div class="col-sm-4" >
+     <label><h3>Liste des individus</h3></label>
+    <table  class="table table-striped" cellspacing="2px" cellpadding="2px" rules="all">
             <tr>
             <th>Code </th>
             <th>Libelle</th>
@@ -50,22 +58,31 @@ echo "<td>".$individus->TIN_LIBELLE."</td>";
 }
 ?>        
  </table> 
-     <select id="lstIndividu">
+     <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A//>Retour au menu</a>
+ </div>
+
+<br>
+<div class="col-sm-8" >
+<h3>Selectionner un individu a modifier ou ajouter un individu</h3>
+<label>Choix d'un Individu</label>
+<br>
+     <select id="lstIndividu" >
                 
                     <?php
                     foreach ($lesindividus as $individus)
                     {
                     ?>
                 
-
+         
      <option name="<?php echo $individus->TIN_LIBELLE;?>" 
              value="<?php echo $individus->TIN_CODE; ?>"
-
              ><?php echo $individus->TIN_LIBELLE; ?></option>
                     <?php
                     }
                     ?>
             </select>
+<br>
+<br>
 
 <form method="post">
     
@@ -83,6 +100,7 @@ $this->db->insert('mytable', $data);
             <td>
                 <div class="form-group">
                     <label for="Code">Code</label>
+                    <br>
                     <input type="textbox" id="code" name="code">
                 </div>
             </td>
@@ -90,6 +108,7 @@ $this->db->insert('mytable', $data);
             <td>
                 <div class="form-group">
                     <label for="Libelle">Libelle</label>
+                    <br>
                     <input type="textbox" id="libelle" name="libelle">
                 </div>
             </td>     
@@ -142,5 +161,10 @@ if($this->input->post('insert') != ''){
      header("refresh: 0;");
 }
 ?>
+        
 </form>
+</div>
+
+</div>
+    
 </html>
