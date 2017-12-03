@@ -55,5 +55,15 @@ class Ctrl_A extends CI_Controller{
                 
                 $this->load->view('v_Stats',$data); 
             }
+            public function afficherMedDeconseiller()
+    {
+                
+        $MED_PERTURBE = $_GET['idDecon'];
+        $model =  $this->load->model('Model_Deconseiller');
+        $data['lesMedDecon'] = $this->Model_Deconseiller->GetMedicamentDecon($MED_PERTURBE);   
+        $this->load->view('afficherMedDeconseiller',$data);
+
+
+    }
    }
  

@@ -16,7 +16,7 @@
         ]);
 
         var options = {
-          title: 'My Daily Activities',
+          title: 'Nombre de Medicament par famille',
           pieHole: 0.5,
         };
 
@@ -24,7 +24,7 @@
         chart.draw(data, options);
       }
     </script>
-    
+    <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
   </head>
   <body>
     <div id="donutchart" style="width: 100%px; height: 800px;"></div>

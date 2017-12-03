@@ -75,3 +75,22 @@ function afficherLesDosages(codeDosage)
         }
         );
 }
+function afficherMedDeconseiller(idDecon)
+{
+    $.ajax(
+    {
+        type:"get",
+        url:"index.php/Ctrl_A/afficherMedDeconseiller",
+        data:"idDecon="+idDecon,
+        success:function(data)
+        {
+            $('#divDeconMed').empty();
+            $('#divDeconMed').append(data);
+        },
+        error:function()
+        {
+            alert('Erreur SQL');
+        }
+    }
+    );
+}

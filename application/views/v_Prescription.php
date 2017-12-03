@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
-         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
+         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctionsJS.js"></script>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          <script type="text/javascript">
          
              $
@@ -53,91 +56,59 @@
         </script>
         
     </head>
-    <body>
+    <body><div class="container-fluid">
          <h1 align="center">Prescription</h1>
         
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A//>Retour au menu</a>
+        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
         <br>
         <br>
-        
-          <div class="col-sm-4">
-        <select size="4" id="lstIndividu">
-                
-                    <?php
-                    foreach ($lesindividus as $individus)
-                    {
-                    ?>
-                
-
-     <option 
-             value="<?php echo $individus->TIN_CODE; ?>"
-
-             ><?php echo $individus->TIN_LIBELLE; ?></option>
-                    <?php
-                    }
-                    ?>
-            </select>
-             
-             <select size="4" id="lstMedicament">
-                
-                    <?php
-                    foreach ($LesPrescription as $medi)
-                    {
-                    ?>
-                
-
-     <option name="<?php echo $medi->MED_NOMCOMMERCIAL;?>"
-                value="<?php echo $medi->MED_DEPOTLEGAL; ?>"
-                ><?php echo $medi->MED_NOMCOMMERCIAL;?></option>
-                    <?php
-                    }
-                    ?>
-            </select>
-             
-         
-        <select size="4" id="lstDosage">
-                
-                    <?php
-                    foreach ($lesdosages as $dos)
-                    {
-                    ?>
-                
-
-     <option 
-             value="<?php echo $dos->DOS_CODE; ?>"
-
-             ><?php echo $dos->DOS_CODE; ?></option>
-                    <?php
-                    }
-                    ?>
-            </select>
-       
-        
-</div>
+    
     <form method="post">
 <tr>
-            <td>
-                <div class="form-group">
-                    <label for="Code">Code Individu</label>
+            
+              <div class="form-group">
+                    <label for="Code">Selectionner un Individu</label>
                     <br>
-                    <input type="textbox" id="code" name="code" readonly="true">
+                    <select   id="code" class="input-small" name="code">
+                          <?php 
+                foreach ($lesindividus as $individus ){
+                ?> 
+                <option value="<?php echo $individus->TIN_CODE;?>"> <?php echo $individus->TIN_LIBELLE;?></option>
+                <?php
+                }
+                ?>
+                        </select>
                 </div>
-            </td>
-    </div>
-            <td>
-                <div class="form-group">
-                    <label for="DepotLegal">Depot legal medicament</label>
+
+               <div class="form-group">
+                    <label for="DepotLegal">Selectionner un Medicament</label>
                     <br>
-                    <input type="textbox" id="depotlegal" name="depotlegal"readonly="true">
+                    <select   id="depotlegal" class="input-small" name="depotlegal">
+                          <?php 
+                foreach ($LesPrescription as $medi ){
+                ?> 
+                <option value="<?php echo $medi->MED_DEPOTLEGAL;?>"> <?php echo $medi->MED_NOMCOMMERCIAL;?></option>
+                <?php
+                }
+                ?>
+                        </select>
                 </div>
-            </td>
-            <td>
-                <div class="form-group">
-                    <label for="Codedosage">Code dosage</label>
+             
+<div class="form-group">
+                    <label for="Codedosage">Selectionner un Dosage</label>
                     <br>
-                    <input type="textbox" id="codedosage" name="codedosage"readonly="true">
+                    <select   id="codedosage" class="input-small" name="codedosage">
+                          <?php 
+                foreach ($lesdosages as $dos ){
+                ?> 
+                <option value="<?php echo $dos->DOS_CODE;?>"> <?php echo $dos->DOS_CODE;?></option>
+                <?php
+                }
+                ?>
+                        </select>
                 </div>
-            </td>
+
+                
     
 <div class="form-group">
             <label>Prescription</label> 
@@ -151,7 +122,7 @@
 <br>
         <tr>    
             <td>
-               <input type="submit" name="insert" value="Sauvegarder" />
+               <input type="submit" name="insert" value="Sauvegarder" class=" btn btn-primary" />
             </td>
         </tr>
         <?php
@@ -180,7 +151,7 @@ if($this->input->post('insert') != ''){
 ?>
         
 </form>
-
+        </div>
     </body>
     
 </html>

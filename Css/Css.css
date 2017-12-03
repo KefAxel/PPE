@@ -20,9 +20,25 @@
 }
 textarea { display:block;}
 
-#Titre
+.btn-info
 {
-    width:  1000px;
-    height: 1000px;
-    float: 
+    background:red;
+    border:none;
+    border-radius:0px;
+}
+.btn-info:hover
+{
+    background:white;
+    color:red;
+    border:red solid 1px;
+}
+.modal-header
+{
+    background:#ff3333;
+    color:white;
+}
+.btn-default
+{
+    background:#ff3333;
+    color:white;
 }

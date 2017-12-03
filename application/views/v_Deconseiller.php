@@ -4,9 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
-         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
+         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctionsJS.js"></script>
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
          <script type="text/javascript">
          
@@ -51,7 +50,24 @@
                     });
                 }
       );
-        
+           $
+           (
+               function()
+                {
+
+                    $("#lstMedicament").change(function(){
+
+
+                  alert( $('#lstMedicament').val());
+                       afficherMedDeconseiller();
+                    });
+
+
+                }
+
+
+             ); 
+
                     
          
         </script>
@@ -63,10 +79,9 @@
   
 
 
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A//>Retour au menu</a>
+        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
         
         <div class="row">
-            <div id="1">
                
             
         
@@ -117,12 +132,14 @@
             <td>
                 <div class="form-group">
                     <label for="Code">Code Medicament</label>
+                    <br>
                     <input type="textbox" id="code" name="code" readonly="true">
                 </div>
             </td>
             <td>
                 <div class="form-group">
                     <label for="CodeN">Code Medicament Deconseiller</label>
+                    <br>
                     <input type="textbox" id="coden" name="coden" readonly="true" >
                 </div>
             </td>
@@ -194,10 +211,10 @@ echo "<td>".$medin->MED_MED_PERTURBE."</td>";
     
  </table> 
      </div>
-    </div>
+    
      </div>
          </div>   
     --
     </body>
-    
+     <div id="divMed"></div>
 </html>

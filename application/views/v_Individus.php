@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
-         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>  
+         <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctionsJS.js"></script>  
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -24,6 +24,8 @@
                     });
                 }
              );
+     
+     
       
                     
          
@@ -84,18 +86,7 @@ echo "<td>".$individus->TIN_LIBELLE."</td>";
 <br>
 <br>
 
-<form method="post">
-    
-<!--    $data = array(
-        'title' => 'My title',
-        'name' => 'My Name',
-        'date' => 'My date'
-);
-
-$this->db->insert('mytable', $data);
-// Produces: INSERT INTO mytable (title, name, date) VALUES ('My title', 'My name', 'My date')-->
-
-    
+<form method="post">  
 <tr>
             <td>
                 <div class="form-group">
@@ -116,12 +107,13 @@ $this->db->insert('mytable', $data);
 
         <tr>    
             <td>
-               <input type="submit" name="insert" value="Insert" />
+               <input type="submit" name="insert" value="Ajouter" class="btn btn-success" />
             </td>
         </tr>
         <tr>    
             <td>
-               <input type="submit" name="update" value="Update" />
+                <input type="submit" name="update" value="Modifier" class=" btn btn-primary"  />
+               
             </td>
         </tr>
         <?php
@@ -159,6 +151,7 @@ if($this->input->post('insert') != ''){
 
     $this->db->insert('type_individu',$data);
      header("refresh: 0;");
+     
 }
 ?>
         

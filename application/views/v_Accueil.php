@@ -1,7 +1,7 @@
 <html>
     <head> 
           <h1 align="center">Gestion des medicaments </h1>
-            <a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/">Accueil</a>
+            <a href="http://localhost/SIO2/Medecin/">Accueil</a>
             <br>
 
     <a href="afficherIndividus">Gestion des Individus</a>
@@ -13,6 +13,7 @@
     <a href="afficherDeconseiller">Gestion des Medicaments non Conseillés</a>
     <br>
     <a href="afficherStats">Stats</a>
+    
     
 </head>
 </html>
