@@ -1,8 +1,8 @@
 <div id="Tableau" align="left">
         <table cellspacing="1px" cellpadding="1px" rules="all">
             <tr>
-            <th>DepotLegal </th>
-            <th>Composant</th>
+            <th>MED_PERTURBE </th>
+            <th>MED_MED_PERTURBE</th>
 
             </tr>
 
