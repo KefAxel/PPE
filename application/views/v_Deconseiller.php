@@ -37,19 +37,6 @@
                 }
       );
       
-      $
-           (
-          function()
-                {
-                    
-                    $('#lstDosage').change(function(){
-                      
-                    $('#codedosage').val($('#lstDosage').val());
-
-
-                    });
-                }
-      );
            $
            (
                function()
@@ -216,5 +203,5 @@ echo "<td>".$medin->MED_MED_PERTURBE."</td>";
          </div>   
     --
     </body>
-     <div id="divMed"></div>
+     <div id="divDeconMed"></div>
 </html>
