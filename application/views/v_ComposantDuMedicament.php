@@ -1,35 +1,33 @@
 <html>
-    <head>
-        <title>Fonctionaliter3</title>
-        <meta charset="UTF-8">
+    <head> 
+          <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
          <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
           <script>
               
-                $
-           (
-               function()
-                {
-                    
-                    $('#lstMedicament').change(function(){
-                      
-                    $('#depotlegal').val($('#lstMedicament').val());
-                    $('#composant').val($('#lstMedicament option:selected').attr('name'));
-                     $('#Quantiter').val($('#lstMedicament option:selected').attr('name2'));
-                     $('#Action').val($('#lstMedicament option:selected').attr('name3'));
-                   
-
-                    });
-                }
-           
+            $
+            
+            (
+              function()      
+      {
+          $('#lstMedicament').change(function(){
               
-               );
+              $('#Quantiter').val($('#lstMedicament').val()); 
+          });
+      }
               
-              
-              
-              
-              
+            );      
+                
+                
+                
+                
+                
+      
+            
+            
+            
               
               
               
@@ -37,44 +35,43 @@
               
               
               
-        </script>
+              </script>
     </head>
     <body>
-       <div id="Tableau" align="left">
-        <table cellspacing="1px" cellpadding="1px" rules="all">
+        <div id="Tableau" align="left">
+            
+            
+            <table cellspacing="1px" cellpadding="1px" rules="all">
+                
+            
+        </div>
+       
             <tr>
             <th>DepotLegal </th>
             <th>Composant</th>
             <th>Quantiter</th>
-        
+            
             </tr>
             
   <?php  
   
   foreach ($lesComposantDuMedicament as $constituer)
       {
-     
-        echo "<td>".$constituer->MED_DEPOTLEGAL."</td>";
-        echo "<td>".$constituer->CMP_LIBELLE."</td>";    
+     echo "<tr>";
+        echo "<td>".$constituer->CMP_CODE."</td>";
+        echo "<td>".$constituer->CMP_LIBELLE."</td>";
         echo "<td>".$constituer->CST_QTE."</td>";
-        echo "<tr>";
+        echo "</tr>";
       }
   
-  
-
   ?>
-           
+            </table>
+            <br>
+
+            <select multiple="" id="lstComposant">
+                 <?php 
             
-<!--      
-<select id="lstmedicament" size="20">-->
-      
-    
- </table> 
-       </div><br><br>
-        
-          <select multiple="" id="lstComposant">
-            <?php 
- 
+           
          
                 foreach ($LesComposants as $composant)
                     {
@@ -83,49 +80,52 @@
                    
                     
             ?>
-          </select><br>    
-
-                 
-    
-    <form method="post">
+            </select>
+           
+                <input type="submit" name="insert" value="Ajouter" /><br>
+                
+        
+            
+        <form method="post">
     
 <tr>
-    
             <td>
                 <div class="form-group">
-                    <label for="Quantiter">Quantiter	</label>
-                    <input type="textbox" id="Quantiter" name="quantiter">
+                    <label for="Quantiter">Quantiter</label>
+                    <input type="textbox" id="Quantiter" name="Quantiter">
                 </div>
-            </td>  
-       
-  <tr>    
-            <td>
+           
+                <td>
                <input type="submit" name="insert" value="Insert" />
             </td>
         </tr>
         <tr>    
-            
-        <?php
+            <td>
+               <input type="submit" name="update" value="Update" />
+            </td>
+        </tr>
+             <?php
+if($this->input->post('update') != ''){
 
-if($this->input->post('insert') != ''){
-/*Perform insert operation here*/
-
-    $quantiter = $this->input->post('quantiter');
-   
     
-
-
+    $Quantiter = $this->input->post('Quantiter');
+  
+    
     $data = array(
-        'CST_QTE' => $quantiter,
+        'CST_QTE' => $Quantiter,
        
     );
-
-
-    $this->db->insert('constituer',$data);
+ $this->db->set('CST_QTE', $Quantiter);
+ $this->db->where('MED_DEPOTLEGAL', $depotlegal);
+$this->db->update('constituer',$data);
+           
      header("refresh: 0;");
+
 }
+
 ?>
+ </form>
         
-</form>
-    </body>     
-</html>
+        
+        </body>
+        </html>

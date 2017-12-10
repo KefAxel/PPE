@@ -26,13 +26,27 @@ class Ctrl_Gestion_Composant extends CI_Controller {
                  $data['LesMedicaments'] = $this->model_composantMedicament->GetMedicament();
                 $this->load->view('v_ComposantMedicament',$data); 
             }
-    public function presentationMedicament()
+            
+            
+            
+            public function PresentationMedicament()
+                    {
+                          $this->load->model('model_presentationMedicament');
+                          $data['LesMedicaments2'] = $this->model_presentationMedicament->GetMedicaments();
+                          $this->load->view('v_presentationMedicament',$data); 
+                    }
+
+                        public function AfficherPresentationMedicaments()
     {
-        $this->load->model('model_presentationMedicament');
-        $data['titre'] = "Presentation composant";
-         $data['LaPresentation_Medicament'] = $this->model_presentationMedicament->GetPresentationtMedicament();
-        $this->load->view('v_PresentationMedicament',$data); 
+        
+                        $MED_DEPOTLEGAL = $_GET['MED_DEPOTLEGAL'];
+                        $model =  $this->load->model('model_presentationMedicament');
+                        $data['lesPresentationDuMedicament'] = $this->model_presentationMedicament->GetPresentationDuMedicament($MED_DEPOTLEGAL);
+                        $this->load->view('v_ComposantDuMedicament',$data);
     }
+    
+    
+    
     public function ModifierComposant()
     {
        $nomCoposant = $_GET['nomCoposant'];
@@ -56,7 +70,7 @@ class Ctrl_Gestion_Composant extends CI_Controller {
         $MED_DEPOTLEGAL = $_GET['MED_DEPOTLEGAL'];
         $model =  $this->load->model('model_composantMedicament');
         $data['lesComposantDuMedicament'] = $this->model_composantMedicament->GetComposantDuMedicament($MED_DEPOTLEGAL);
-          $data['lesComposantDuMedicament2'] = $this->model_composantMedicament->GetMedicament();
+          //$data['lesComposantDuMedicament2'] = $this->model_composantMedicament->GetMedicament();
            $this->load->model('model_composant');
            $data['LesComposants'] = $this->model_composant->GetComposant();
         $this->load->view('v_ComposantDuMedicament',$data);

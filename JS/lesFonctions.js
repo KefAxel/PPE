@@ -1,4 +1,4 @@
-function AfficherComposantDuMedicament(MED_DEPOTLEGAL)
+function AfficherComposantDuMedicament()
  { 
      $.ajax 
      (
@@ -10,7 +10,7 @@ function AfficherComposantDuMedicament(MED_DEPOTLEGAL)
              {
                  $('#divComposant').empty();
                 $('#divComposant').append(data);
-                 
+                  
              },
             error:function()
              {
@@ -20,3 +20,35 @@ function AfficherComposantDuMedicament(MED_DEPOTLEGAL)
  
     ); 
  }
+ function AfficherPresentationMedicament()
+ {
+     $.ajax
+     (
+        {    
+             type:"get",
+             url:"AfficherPresentationMedicaments",
+             data:"MED_DEPOTLEGAL="+$('#lstMedicament2').val(),
+             success:function(data)
+             {
+                 $('#divPresentation').empty();
+                $('#divPresentation').append(data);
+                  
+             },
+             error:function()
+             {
+                 alert('Erreur !!!');
+            }
+             
+     }       
+             );
+ }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+ 

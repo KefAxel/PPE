@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="<?php echo base_url();?>JQuery/jquery-3.1.1.js"></script>
          <script type="text/javascript" src="<?php echo base_url();?>JS/lesFonctions.js"></script>
+         
          <script>
              
                $
@@ -14,16 +15,14 @@
                     
                     $("#lstMedicament").change(function(){
                     
+                    
+                  ( $('#lstMedicament').val());
                     // Ce ne sont pas des input mais une liste
                     //$("input[name='formation']").click(function(){
                        AfficherComposantDuMedicament();
                     });
                     
-                    $('#divComposant').change
-                    (
-                            function(){AfficherComposantDuMedicament($(this).val());
-                    }
-                            );
+                    
                 }
                        
                         
@@ -52,14 +51,18 @@
             <?php
                 foreach ($LesMedicaments as $constituer)
                     {
-                        echo "<option id='opt1' value='".$constituer->CMP_CODE."'>".$constituer->MED_DEPOTLEGAL."</option>";
+                        echo "<option id='opt1' value='".$constituer->MED_DEPOTLEGAL."'>".$constituer->MED_DEPOTLEGAL."</option>";
+                        
                     }
                
                     
             ?>
             
+            
         
-        </select><br>
+        </select><br><br>
+      
+                  <button><a href="PresentationMedicament">Presentation Medicament</a></button>
         
          <br><br>
         <div id="divComposant"></div>

@@ -11,7 +11,7 @@
               function()
                {
            $('#lstComposant').change(function(){
-          $('#libelle').val($('#lstComposant').val());
+          $('#code').val($('#lstComposant').val());
      });
      
      
