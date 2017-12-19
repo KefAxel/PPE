@@ -50,7 +50,7 @@
                 
             </ul>
             <br>
-             <a href="http://localhost/SIO2/Medecin/index.php/Ctrl_K/"><input type="button" class=" btn btn-primary"  value="Entrer"/></a>  
+             <a href="http://localhost/SIO2/Medecin/index.php/Ctrl_Gestion_Composant/"><input type="button" class=" btn btn-primary"  value="Entrer"/></a>  
         </div>
     </div>
     </div>

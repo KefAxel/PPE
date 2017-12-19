@@ -78,6 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+
 	'database' => 'gsb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
