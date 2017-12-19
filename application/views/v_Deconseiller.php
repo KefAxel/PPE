@@ -18,7 +18,6 @@
                       
                     $('#code').val($('#lstMedicament').val());
 
-
                     });
                 }
                    
@@ -45,8 +44,6 @@
                     $("#lstMedicament").change(function(){
 
 
-                  alert( $('#lstMedicament').val());
-                       afficherMedDeconseiller();
                     });
 
 
@@ -62,11 +59,20 @@
     </head>
     <body>
         <div class="container-fluid">
-  <h2>Medicament deconseillé </h2>
   
 
 
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
+        <div class="container">
+  <h1 align="center"> Medicament deconseillé</h1>                
+  <ul class="pagination">
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A">Accueil</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherIndividus">Gestion des Individus</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherLesMedicament">Gestion des Medicaments</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherPrecription">Gestion des Prescription</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherDeconseiller">Gestion des Medicaments non Conseillés</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherStats">Statistique</a></li>
+  </ul>
+</div>
         
         <div class="row">
                
@@ -77,7 +83,7 @@
              
              
     <div class="col-sm-6" >
-             
+        <h5>Selectionner le médicament pertubateur</h5>
          <select size="4" id="lstMedicament">
                 
                     <?php
@@ -93,6 +99,7 @@
                     }
                     ?>
             </select>
+        <h5>Selectionner le médicament pertuber</h5>
         <select size="4"  id="lstMedicament2">
                 
                     <?php
@@ -176,13 +183,14 @@ if($this->input->post('insert') != ''){
 
     <table class="table table-striped"  rules="all">
             <tr>
-            <th>Nom Medicament </th>
-            <th>Nom Medicament Déconseillé</th>
+            <th>Nom médicament pertubateur </th>
+            <th>Nom médicament pertuber </th>
             </tr>  
             
 <!--      
 <select id="lstmedicament" size="20">-->
 <?php 
+
 //echo "input type='button' href='index.php/Ctrl_A/afficherIndividus'";
 foreach ($medicamentn as $medin)
     {
@@ -202,6 +210,10 @@ echo "<td>".$medin->MED_MED_PERTURBE."</td>";
      </div>
          </div>   
     --
+     <div id="divDeconMed">
+        
+        
+    </div>  
     </body>
-     <div id="divDeconMed"></div>
+   
 </html>
