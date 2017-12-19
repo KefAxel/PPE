@@ -19,17 +19,25 @@ class model_composantMedicament extends CI_Model{
             }
     public function GetComposantDuMedicament($MED_DEPOTLEGAL)
             {
-                 $sql = $this->db->query("SELECT * FROM composant, constituer WHERE composant.CMP_CODE = constituer.CMP_CODE and constituer.MED_DEPOTLEGAL='".$MED_DEPOTLEGAL."'");
-                  return $sql->result();
+                $sql = $this->db->query("SELECT constituer.CMP_CODE, CMP_LIBELLE, CST_QTE, MED_NOMCOMMERCIAL, MED_COMPOSITION FROM composant, constituer,medicament 
+WHERE composant.CMP_CODE = constituer.CMP_CODE 
+and medicament.MED_DEPOTLEGAL = constituer.MED_DEPOTLEGAL
+and constituer.MED_DEPOTLEGAL = '".$MED_DEPOTLEGAL."'");
+                 return $sql->result();
             }
                public function GetComposant()
             {
-         $sql = $this->db->query(" select * from composant ");
+                $sql = $this->db->query(" select * from composant ");
                 return $sql->result();
             }
     
-            function modifier_quantiter($data)
+       public  function ModifierQuantite($num,$qte,$numComp)
             {
-                $query = $this->db->update('constituer',$data);
+                $sql = $this->db->query("update constituer set CST_QTE= ".$qte. " where MED_DEPOTLEGAL = '".$num."' and CMP_CODE = ".$numComp);
+                
             }
+       public function AjouterQuantite($num,$comp,$Comp)
+       {
+           $sql = $this->db->query();
+       }
 }

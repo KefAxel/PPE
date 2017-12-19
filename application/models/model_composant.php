@@ -17,5 +17,6 @@ class model_composant extends CI_Controller{
          $sql = $this->db->query(" select * from composant ");
                 return $sql->result();
             }
+            
     
 }

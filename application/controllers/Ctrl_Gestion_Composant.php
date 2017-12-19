@@ -70,6 +70,7 @@ class Ctrl_Gestion_Composant extends CI_Controller {
         $MED_DEPOTLEGAL = $_GET['MED_DEPOTLEGAL'];
         $model =  $this->load->model('model_composantMedicament');
         $data['lesComposantDuMedicament'] = $this->model_composantMedicament->GetComposantDuMedicament($MED_DEPOTLEGAL);
+
           //$data['lesComposantDuMedicament2'] = $this->model_composantMedicament->GetMedicament();
            $this->load->model('model_composant');
            $data['LesComposants'] = $this->model_composant->GetComposant();
@@ -77,5 +78,21 @@ class Ctrl_Gestion_Composant extends CI_Controller {
         
         
     }
+    public function ModifierQuantite()
+    {
+        $num = $_GET['num'];
+        $qte = $_GET['qte'];
+         $numComp = $_GET['numComp'];
+        $model =  $this->load->model('model_composantMedicament');
+        $data = $this->model_composantMedicament->ModifierQuantite($num,$qte,$numComp);
+    }
+    public function AjouterQuantite()
+            {
+                $num = $_GET['num'];
+                $comp = $_GET['comp'];
+                $numComp = $_GET['numComp'];
+                 $model =  $this->load->model('model_composantMedicament');
+                  $data = $this->model_composantMedicament->AjouterQuantite($num,$comp,$numComp);
+            }
     
 }

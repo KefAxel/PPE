@@ -45,8 +45,10 @@
              </script>
                </head>
     <body>
+          <button><a href="PresentationMedicament">Presentation Medicament</a></button>
+        <h2>Liste Medicament</h2> 
+       
         
-        <h2>Liste Medicament</h2>
         <select id="lstMedicament">
             <?php
                 foreach ($LesMedicaments as $constituer)
@@ -62,7 +64,7 @@
         
         </select><br><br>
       
-                  <button><a href="PresentationMedicament">Presentation Medicament</a></button>
+                 
         
          <br><br>
         <div id="divComposant"></div>

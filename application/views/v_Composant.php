@@ -24,27 +24,27 @@
         function()
         {
           $('#update').click(function(){
-              $('#libelle').val($('#lst1 option:selected').text());
+              $('#libelle').val($('#lstComposant option:selected').text());
           });  
         },   
        
     );
     
-     $('#lstComposant').change
-                     (
-                        function()
-                         {
-                             $('#libelle').val($('#lstComposant option:selected').text());
-                         }
-                    );
-                     $('#update').click
-                     (
-                         function()
-                         {
-                             ModifierComposant();
-                         }
-                     );
-                 
+//     $('#lstComposant').change
+//                     (
+//                        function()
+//                         {
+//                             $('#libelle').val($('#lstComposant option:selected').text());
+//                         }
+//                    );
+//                     $('#update').click
+//                     (
+//                         function()
+//                         {
+//                             ModifierComposant();
+//                         }
+//                     );
+//                 
       
  
 
@@ -69,7 +69,7 @@
                     
             ?>
         </select><br><br>
-        <button><a href="index.php/Ctrl_Gestion_Composant/composantMedicament">Composant des medicament </a></button>
+        
         
        <form method="post">
     
@@ -86,8 +86,8 @@ $this->db->insert('mytable', $data);
     <td>
                 <div class="form-group">
                     <label for="Code">Code</label>
-                    <input type="textbox" id="code" name="code">
-                </div>
+                    <input type="textbox"  id="code" name="code" readOnly >
+                </div><br>
             
 
             <td>
@@ -101,7 +101,8 @@ $this->db->insert('mytable', $data);
         <tr>    
             <td>
                <input type="submit" name="insert" value="Ajouter" />
-                <input type="submit" name="update" value="Modifier"/>
+               <input type="submit" name="update" value="Modifier"/><br><br>
+                <button><a href="index.php/Ctrl_Gestion_Composant/composantMedicament">Composant des medicament </a></button>
             </td>
             
         </tr>           

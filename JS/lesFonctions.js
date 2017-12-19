@@ -20,6 +20,7 @@ function AfficherComposantDuMedicament()
  
     ); 
  }
+ 
  function AfficherPresentationMedicament()
  {
      $.ajax
@@ -43,9 +44,30 @@ function AfficherComposantDuMedicament()
              );
  }
      
+     function ModifierQuantite()
+     {
+         //alert($('#lstMedicament').val()+ " - " +$('#txtQte').val());
+         $.ajax
+        (
+           {    
+                type:"get",
+                url:"ModifierQuantite",
+                data:"num="+$('#lstMedicament').val()+"&qte="+$('#txtQte').val()+"&numComp="+$('#lstComposant').val(),
+                success:function(data)
+                {
+
+
+                },
+                error:function()
+                {
+                    alert('Erreur !!!');
+               }
+
+           }       
+             );
+ }
      
-     
-     
+
      
      
      

@@ -15,7 +15,7 @@ class model_composantDuMedicament  extends CI_Model{
     //put your code here
       public function GetComposantDuMedicament($MED_DEPOTLEGAL)
             {
-                 $sql = $this->db->query("SELECT * FROM composant, constituer WHERE composant.CMP_CODE = constituer.CMP_CODE and constituer.MED_DEPOTLEGAL='".$MED_DEPOTLEGAL."'");
+                 $sql = $this->db->query("SELECT * FROM composant, constituer, medicament WHERE composant.CMP_CODE = constituer.CMP_CODE and medicament.MED_DEPOTLEGAL = constituer.MED_DEPOTLEGAL and constituer.MED_DEPOTLEGAL='".$MED_DEPOTLEGAL."'");
                   return $sql->result();
             }
 }
