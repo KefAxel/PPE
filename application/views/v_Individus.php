@@ -31,9 +31,19 @@
          
         </script>
     </head>
-    <h1 align="center">Individu </h1>
+    
     <div class="container-fluid">
-        
+         <div class="container">
+  <h1 align="center">Gestion des Individus</h1>                
+  <ul class="pagination">
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A">Accueil</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherIndividus">Gestion des Individus</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherLesMedicament">Gestion des Medicaments</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherPrecription">Gestion des Prescription</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherDeconseiller">Gestion des Medicaments non Conseillés</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherStats">Statistique</a></li>
+  </ul>
+</div>
 <br>
 <br>
 
@@ -60,7 +70,7 @@ echo "<td>".$individus->TIN_LIBELLE."</td>";
 }
 ?>        
  </table> 
-     <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A//>Retour au menu</a>
+     <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
  </div>
 
 <br>

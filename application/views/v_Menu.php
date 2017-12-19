@@ -13,7 +13,8 @@
         <div class="container-fluid">
           <h1 align="center">GSB</h1>
            <div class="row">
-            
+               <br>
+               <br>
         
         
     <div id="divGenerale">
@@ -38,7 +39,7 @@
         
         <div class="col-sm-6">
             
-             <img src="Image/pill.jpg" class="img-rounded"  width="200" height="200">
+             <img src="Image/skel.png" class="img-rounded"  width="200" height="200">
             <p>Gestion des composants </p>
             <ul>
                 <li>Insérer, modifier, lister des composants</li>

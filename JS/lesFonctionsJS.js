@@ -75,13 +75,13 @@ function afficherLesDosages(codeDosage)
         }
         );
 }
-function afficherMedDeconseiller(idDecon)
+function afficherMedDeconseiller()
 {
     $.ajax(
     {
         type:"get",
         url:"index.php/Ctrl_A/afficherMedDeconseiller",
-        data:"idDecon="+idDecon,
+        data:"$MED_MED_PERTURBE="+$('#lstMedicament').val(),
         success:function(data)
         {
             $('#divDeconMed').empty();

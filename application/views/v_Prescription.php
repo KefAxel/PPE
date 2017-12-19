@@ -59,9 +59,19 @@
     <body><div class="container-fluid">
          <h1 align="center">Prescription</h1>
         
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
-        <br>
-        <br>
+  
+
+
+        <div class="container">           
+  <ul class="pagination">
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A">Accueil</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherIndividus">Gestion des Individus</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherLesMedicament">Gestion des Medicaments</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherPrecription">Gestion des Prescription</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherDeconseiller">Gestion des Medicaments non Conseillés</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherStats">Statistique</a></li>
+  </ul>
+</div>
     
     <form method="post">
 <tr>

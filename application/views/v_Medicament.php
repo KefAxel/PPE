@@ -39,12 +39,25 @@
         
     </head>
     <body>
-        <h1 align="center">Medicament</h1>
-        <a href=http://localhost/SIO2/Medecin/index.php/Ctrl_A/>Retour au menu</a>
+        <h1 align="center">Gestion des medicaments </h1>
+  
+
+
+        <div class="container">
+              
+  <ul class="pagination" align="center">
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A">Accueil</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherIndividus">Gestion des Individus</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherLesMedicament">Gestion des Medicaments</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherPrecription">Gestion des Prescription</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherDeconseiller">Gestion des Medicaments non Conseillés</a></li>
+    <li><a href="http://localhost/SIO2/Medecin/index.php/Ctrl_A/afficherStats">Statistique</a></li>
+  </ul>
+</div>
         
         <br>
         <br>
-        <div class="col-sm-6">
+        <div class="col-sm-7">
         <table class="table table-striped" cellspacing="2px" cellpadding="2px" rules="all"  >
             <tr>
             <th>Depot legal </th>
